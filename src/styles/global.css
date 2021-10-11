@@ -1,0 +1,12 @@
+@import url(fonts.css);
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: #FF6060;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
