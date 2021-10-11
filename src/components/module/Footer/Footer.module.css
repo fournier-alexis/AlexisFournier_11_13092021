@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    background-color: black;
+}
+
+.container img {
+    margin-top: 66px;
+    height: 36px;
+    filter: invert(100%) saturate(7414%) hue-rotate(165deg) brightness(200%);
+}
+
+.container p {
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34px;
+    margin: 30px 0
+}
