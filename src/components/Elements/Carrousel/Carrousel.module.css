@@ -1,0 +1,23 @@
+.carrousel {
+    position: relative;
+}
+
+.angle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: filter 500ms ease;
+}
+
+.angle:hover {
+    cursor: pointer;
+    filter: brightness(70%);
+}
+
+.left {
+    left: 25px
+}
+
+.right {
+    right: 25px;
+}
