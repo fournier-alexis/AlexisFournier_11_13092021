@@ -1,0 +1,34 @@
+.card {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    margin-bottom: 50px;
+    transition: all 500ms ease;
+}
+
+.card:hover {
+    cursor: pointer;
+    filter: brightness(0.80);
+}
+
+.image, .container {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    background: linear-gradient(180deg, #FF6060 0%, #803131 100%);
+}
+
+.title {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    margin: 0;
+    font-size: 1.125rem;
+    color: #FFFFFF;
+    font-weight: 500;
+}
