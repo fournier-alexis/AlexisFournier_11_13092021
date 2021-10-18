@@ -1,6 +1,6 @@
 .main {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .row_1, .row_2 {
@@ -63,4 +63,11 @@
 .informations {
     display: flex;
     justify-content: space-between;
+}
+
+@media (min-width: 650px) {
+    .main {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
 }

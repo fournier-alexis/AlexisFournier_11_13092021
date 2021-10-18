@@ -1,14 +1,27 @@
 .main {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .locations {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 43px;
-    padding: 56px 50px;
-    background: #F7F7F7;
+    justify-content: center;
+    margin-top: 22px;
+    background: #FFF;
     border-radius: 25px;
+}
+
+@media (min-width: 650px) {
+    .main {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .locations {
+        justify-content: space-between;
+        margin-top: 43px;
+        padding: 56px 50px 0 50px;
+        background: #F7F7F7;
+    }
 }

@@ -1,14 +1,18 @@
 .container {
     display: flex;
-    margin: 0 100px;
+    margin: 0 20px;
     justify-content: space-between;
-    margin-top: 40px;
-    margin-bottom: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .nav {
     display: flex;
     align-items: center;
+}
+
+.logo {
+    width: 145px;
 }
 
 .a {
@@ -21,7 +25,7 @@
 }
 
 .accueil {
-    margin-right: 58px;
+    margin-right: 10px;
 }
 
 .inactive {
@@ -30,4 +34,20 @@
 
 .active {
     text-decoration: underline;
+}
+
+@media (min-width: 650px) {
+    .container {
+        margin: 0 100px;
+        margin-top: 40px;
+        margin-bottom: 45px;
+    }
+
+    .logo {
+        width: 210px;
+    }
+    
+    .accueil {
+        margin-right: 58px;
+    }
 }

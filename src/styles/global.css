@@ -7,6 +7,12 @@ body {
 
 a {
   color: #FF6060;
-  font-size: 1.5rem;
+  font-size: 0.75rem;
   font-weight: 500;
+}
+
+@media (min-width: 650px) {
+  a {
+    font-size: 1.5rem;
+  }  
 }

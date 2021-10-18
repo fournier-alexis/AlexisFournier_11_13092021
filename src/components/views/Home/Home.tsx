@@ -15,12 +15,13 @@ export class Home extends React.Component<Props, {}> {
   };
 
   render() {
+    const bannerHeight = window.screen.width >= 650 ? 223 : 111;
     return (
       <main className={styles.main}>
         <Banner
           image_path={banner}
           alt="Bord de mer"
-          height={223}
+          height={bannerHeight}
           title="Chez vous, et partout ailleurs"
           brightness={0.7}
         />

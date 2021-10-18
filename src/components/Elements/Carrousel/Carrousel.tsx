@@ -37,12 +37,14 @@ export class Carrousel extends React.Component<Props, State> {
   }
 
   render() {
+    const bannerHeight = window.screen.width >= 650 ? 415 : 255;
+
     return (
       <div className={styles.carrousel}>
         <Banner
           image_path={this.props.location.pictures[this.state.image_position]}
           alt={this.props.location.title}
-          height={415}
+          height={bannerHeight}
         ></Banner>
         {this.props.location.pictures[this.state.image_position - 1] && (
           <img

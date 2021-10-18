@@ -10,9 +10,17 @@
 
 .title {
     position: absolute;
-    top: 24%;
-    left: 24%;
-    font-size: 3rem;
+    top: 10%;
+    left: 5%;
+    font-size: 1.5rem;
     font-weight: 500;
     color: #FFFFFF;
+}
+
+@media (min-width: 650px) {
+    .title {
+        top: 24%;
+        left: 24%;
+        font-size: 3rem;
+    }
 }

@@ -2,26 +2,46 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10em;
+    margin: 207px 58px;
 }
 
 .code {
-    font-size: 18rem;
+    font-size: 6rem;
     font-weight: bold;
     color: #FF6060;
-    margin: 0 0 66px 0;
+    margin: 0 0 11px 0;
 }
 
 .error {
-    font-size: 2.25rem;
-    font-weight: 500;
-    color: #FF6060;
-    margin: 0 0 182px 0;
-}
-
-.link {
     font-size: 1.125rem;
     font-weight: 500;
     color: #FF6060;
+    margin: 0 0 133px 0;
+}
+
+.link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #FF6060;
     margin: 0;
+}
+
+@media (min-width: 650px) {
+    .container {
+        margin: 186px 0;
+    }
+
+    .code {
+        font-size: 18rem;
+        margin: 0 0 66px 0;
+    }
+
+    .error {
+        font-size: 2.25rem;
+        margin: 0 0 182px 0;
+    }
+
+    .link {
+        font-size: 1.125rem;
+    }
 }

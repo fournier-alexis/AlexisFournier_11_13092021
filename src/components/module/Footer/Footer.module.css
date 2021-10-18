@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 22px;
     background-color: black;
 }
 
@@ -15,8 +15,18 @@
 
 .container p {
     color: white;
-    font-size: 24px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 34px;
     margin: 30px 0
+}
+
+@media (min-width: 650px) {
+    .container {
+        margin-top: 50px;
+    }
+
+    .container p {
+        font-size: 24px;
+    }
 }

@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./styles/global.css";
-import { Header } from "./components/module/Header/Header";
+import Header from "./components/module/Header/Header";
 import { Exception } from "./components/views/Exception/Exception";
 import { Home } from "./components/views/Home/Home";
 import { Footer } from "./components/module/Footer/Footer";
@@ -33,7 +33,7 @@ export default class App extends React.Component<{}, State> {
   render() {
     return (
       <ErrorBoundary>
-        <Router>
+        <BrowserRouter>
           <Header></Header>
           <Switch>
             <Route exact path="/">
@@ -51,7 +51,7 @@ export default class App extends React.Component<{}, State> {
             </Route>
           </Switch>
           <Footer></Footer>
-        </Router>
+        </BrowserRouter>
       </ErrorBoundary>
     );
   }

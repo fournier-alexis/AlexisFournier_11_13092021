@@ -1,8 +1,8 @@
 .card {
     position: relative;
-    width: 340px;
-    height: 340px;
-    margin-bottom: 50px;
+    width: 355px;
+    height: 255px;
+    margin-bottom: 20px;
     transition: all 500ms ease;
 }
 
@@ -31,4 +31,12 @@
     font-size: 1.125rem;
     color: #FFFFFF;
     font-weight: 500;
+}
+
+@media (min-width: 650px) {
+    .card {
+        width: 340px;
+        height: 340px;
+        margin-bottom: 50px;
+    }
 }
