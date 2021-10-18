@@ -14,20 +14,32 @@ import { ErrorBoundary } from "./ErrorBoundary";
 type State = {
   locations: DaoLocation[];
   locationSelected?: DaoLocation;
+  isLoading: boolean;
+  error?: string;
 };
 export default class App extends React.Component<{}, State> {
   state: State = {
     locations: [],
     locationSelected: undefined,
+    isLoading: true,
+    error: undefined,
   };
 
   componentDidMount() {
     new Dbal()
       .getLocations()
       .then((loc) => {
-        this.setState({ locations: loc });
+        this.setState({
+          locations: loc,
+          isLoading: false,
+        });
       })
-      .catch((err) => console.log(err));
+      .catch((err) =>
+        this.setState({
+          isLoading: false,
+          error: err,
+        })
+      );
   }
 
   render() {
@@ -40,7 +52,9 @@ export default class App extends React.Component<{}, State> {
               <Home locations={this.state.locations}></Home>
             </Route>
             <Route exact path="/location">
-              <Location locations={this.state.locations}></Location>
+              {!this.state.isLoading ? (
+                <Location locations={this.state.locations}></Location>
+              ) : null}
             </Route>
             <Route exact path="/about" component={About} />
             <Route>

@@ -26,7 +26,9 @@ export class Location extends React.Component<Props, {}> {
     const fullname = location.host.name.split(" ");
     const nom: string = fullname && fullname[0];
     const prenom: string = fullname && fullname[1];
-    const rating = new Array(5).fill(0).fill(1, 0, parseInt(location.rating));
+    const rating = new Array(5)
+      .fill(0)
+      .fill(1, 0, parseInt(location.rating, 10));
 
     return (
       <main className={styles.main}>
