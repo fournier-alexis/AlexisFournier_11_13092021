@@ -3,6 +3,8 @@
 }
 
 .angle {
+    width: 12px;
+    height: 20px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -15,9 +17,24 @@
 }
 
 .left {
-    left: 25px
+    left: 12px
 }
 
 .right {
-    right: 25px;
+    right: 12px;
+}
+
+@media (min-width: 650px) {
+    .angle {
+        width: 48px;
+        height: 80px;
+    }
+
+    .left {
+        left: 25px
+    }
+    
+    .right {
+        right: 25px;
+    }
 }

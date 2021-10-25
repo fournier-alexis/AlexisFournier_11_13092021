@@ -2,18 +2,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 105px;
-    height: 25px;
+    min-width: 60px;
+    height: 18px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 10px;
     color: white;
     background-color: #FF6060;
     margin: 0;
     padding: 0 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-right: 10px;
 }
 
 .tag p {
     margin: 0;
+}
+
+@media (min-width: 650px) {
+    .tag {
+        min-width: 105px;
+        height: 25px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
 }

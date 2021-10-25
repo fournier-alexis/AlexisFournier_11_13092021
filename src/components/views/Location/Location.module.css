@@ -3,37 +3,46 @@
     margin-right: 20px;
 }
 
+.details {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
 .row_1, .row_2 {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
 }
 
 .row_2 {
-    align-items: center;
+    align-items: flex-end;
+    flex-direction: row-reverse;
 }
 
 .title {
     font-weight: 500;
-    font-size: 36px;
+    font-size: 18px;
     color: #FF6060;
-    margin: 30px 0 0 0;
+    margin: 15px 0 0 0;
 }
 
 .location {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     color: #FF6060;
-    margin: 0 0 20px 0;
+    margin: 5px 0 0 0;
 }
 
 .host {
     display: flex;
-    margin-top: 30px;
+    align-items: center;
+    margin-top: 16px;
 }
 
 .host img {
-    width: 64px;
-    height: 64px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
 }
 
@@ -42,18 +51,26 @@
 }
 
 .identity {
-    margin: 10px 10px 0 0;
+    margin: 0 10px 0 0;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 12px;
     color: #FF6060;
 }
 
 .tags {
     display: flex;
+    margin-top: 10px;
+}
+
+.rate {
+    height: fit-content;
+    margin-top: 20px;
 }
 
 .active, .inactive {
-    margin: 5px;
+    width: 15px;
+    height: 15px;
+    margin: 2.5px;
 }
 
 .inactive {
@@ -63,11 +80,54 @@
 .informations {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    margin-top: 6px;
 }
 
 @media (min-width: 650px) {
     .main {
         margin-left: 100px;
         margin-right: 100px;
+    }
+
+    .details {
+        flex-direction: row;
+    }
+
+    .title {
+        font-size: 36px;
+        margin: 30px 0 0 0;
+    }
+
+    .location {
+        font-size: 18px;
+    }
+
+    .row_2 {
+        flex-direction: column;
+    }
+
+    .host {
+        margin-top: 30px;
+    }
+
+    .host img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .identity {
+        font-size: 18px;
+    }
+
+    .informations {
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    .active, .inactive {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
     }
 }

@@ -29,55 +29,59 @@ export class Location extends React.Component<Props, {}> {
     const rating = new Array(5)
       .fill(0)
       .fill(1, 0, parseInt(location.rating, 10));
+    const dropdownWidth = window.screen.width >= 650 ? 582 : 320;
+    const dropdownHeight = window.screen.width >= 650 ? 249 : 143;
 
     return (
       <main className={styles.main}>
         <Carrousel location={location}></Carrousel>
-        <div className={styles.row_1}>
-          <div>
-            <h1 className={styles.title}>{location.title}</h1>
-            <h2 className={styles.location}>{location.location}</h2>
-          </div>
-          <div className={styles.host}>
-            <div className={styles.identity}>
-              <p>{nom}</p>
-              <p>{prenom}</p>
+        <div className={styles.details}>
+          <div className={styles.row_1}>
+            <div>
+              <h1 className={styles.title}>{location.title}</h1>
+              <h2 className={styles.location}>{location.location}</h2>
             </div>
-            <img
-              src={location.host.picture}
-              alt={`Portrait de ${location.host.name}`}
-            />
+            <div className={styles.tags}>
+              {location.tags.map((tag, index) => (
+                <Tag key={index} label={tag} />
+              ))}
+            </div>
           </div>
-        </div>
-        <div className={styles.row_2}>
-          <div className={styles.tags}>
-            {location.tags.map((tag, index) => (
-              <Tag key={index} label={tag} />
-            ))}
-          </div>
-          <div className={styles.rate}>
-            {rating.map((isActived, index) => (
+          <div className={styles.row_2}>
+            <div className={styles.host}>
+              <div className={styles.identity}>
+                <p>{nom}</p>
+                <p>{prenom}</p>
+              </div>
               <img
-                key={index}
-                className={`${isActived ? styles.active : styles.inactive}`}
-                src={star}
-                alt={"Etoile d'évaluation"}
-              ></img>
-            ))}
+                src={location.host.picture}
+                alt={`Portrait de ${location.host.name}`}
+              />
+            </div>
+            <div className={styles.rate}>
+              {rating.map((isActived, index) => (
+                <img
+                  key={index}
+                  className={`${isActived ? styles.active : styles.inactive}`}
+                  src={star}
+                  alt={"Etoile d'évaluation"}
+                ></img>
+              ))}
+            </div>
           </div>
         </div>
         <section className={styles.informations}>
           <Dropdown
             label={"Description"}
             content={[location.description]}
-            width="582px"
-            height="249px"
+            width={`${dropdownWidth}px`}
+            height={`${dropdownHeight}px`}
           ></Dropdown>
           <Dropdown
             label={"Equipement"}
             content={location.equipments}
-            width="582px"
-            height="249px"
+            width={`${dropdownWidth}px`}
+            height={`${dropdownHeight}px`}
           ></Dropdown>
         </section>
       </main>
