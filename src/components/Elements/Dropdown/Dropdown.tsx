@@ -19,7 +19,7 @@ export class Dropdown extends React.Component<Props, State> {
     isOpen: false,
   };
 
-  constructor(props: any) {
+  constructor(props: Props) {
     super(props);
     this.swapDropdown = this.swapDropdown.bind(this);
   }

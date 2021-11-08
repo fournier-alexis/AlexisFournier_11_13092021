@@ -12,7 +12,27 @@ type Props = {
   locations: DaoLocation[];
 };
 
-export class Location extends React.Component<Props, {}> {
+type State = {
+  screenWidth: number;
+};
+
+export class Location extends React.Component<Props, State> {
+  state: State = {
+    screenWidth: window.innerWidth,
+  };
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize.bind(this));
+  }
+
+  handleResize() {
+    if (Math.abs(this.state.screenWidth - window.innerWidth) > 50) {
+      this.setState({
+        screenWidth: window.innerWidth,
+      });
+    }
+  }
+
   render() {
     const id = getSearchedId(window.location.search);
     const [location] = this.props.locations.filter(
@@ -29,8 +49,8 @@ export class Location extends React.Component<Props, {}> {
     const rating = new Array(5)
       .fill(0)
       .fill(1, 0, parseInt(location.rating, 10));
-    const dropdownWidth = window.screen.width >= 650 ? 582 : 320;
-    const dropdownHeight = window.screen.width >= 650 ? 249 : 143;
+    const dropdownWidth = this.state.screenWidth >= 650 ? "582px" : "100%";
+    const dropdownHeight = this.state.screenWidth >= 650 ? 249 : 143;
 
     return (
       <main className={styles.main}>
@@ -74,13 +94,13 @@ export class Location extends React.Component<Props, {}> {
           <Dropdown
             label={"Description"}
             content={[location.description]}
-            width={`${dropdownWidth}px`}
+            width={`${dropdownWidth}`}
             height={`${dropdownHeight}px`}
           ></Dropdown>
           <Dropdown
             label={"Equipement"}
             content={location.equipments}
-            width={`${dropdownWidth}px`}
+            width={`${dropdownWidth}`}
             height={`${dropdownHeight}px`}
           ></Dropdown>
         </section>

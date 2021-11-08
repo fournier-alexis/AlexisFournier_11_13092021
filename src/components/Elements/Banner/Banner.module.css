@@ -4,6 +4,7 @@
 
 .image {
     width: 100%;
+    height: 111px;
     border-radius: 25px;
     object-fit: cover;
 }
@@ -18,6 +19,10 @@
 }
 
 @media (min-width: 650px) {
+    .image {
+        height: 223px;
+    }
+
     .title {
         top: 24%;
         left: 24%;

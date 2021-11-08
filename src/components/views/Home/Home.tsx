@@ -10,18 +10,16 @@ type Props = {
 };
 
 export class Home extends React.Component<Props, {}> {
-  goToDetails = (id: string): any => {
+  goToDetails = (id: string): void => {
     window.location.href = "/location?id=" + id;
   };
 
   render() {
-    const bannerHeight = window.screen.width >= 650 ? 223 : 111;
     return (
       <main className={styles.main}>
         <Banner
           image_path={banner}
           alt="Bord de mer"
-          height={bannerHeight}
           title="Chez vous, et partout ailleurs"
           brightness={0.7}
         />

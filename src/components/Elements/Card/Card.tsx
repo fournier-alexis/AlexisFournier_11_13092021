@@ -10,21 +10,24 @@ type Props = {
 }
 
 export class Card extends React.Component<Props, {}> {
+  goToDetails = (id: string): void => {
+    window.location.href = "/location?id=" + id;
+  };
 
-    goToDetails = (id: string): any => {
-        window.location.href = "/location?id=" + id;
-    };
-
-    render () {
-        return (
-            <Link className={styles.card} to={`/location?id=${this.props.id}`}>
-                {this.props.image_path ? (
-                    <img className={styles.image} src={this.props.image_path} alt={this.props.alt} />
-                ) : (
-                    <div className={styles.container}/>
-                )}
-                <h1 className={styles.title}>{this.props.title}</h1>
-            </Link>
-        )
-    }
+  render() {
+    return (
+      <Link className={styles.card} to={`/location?id=${this.props.id}`}>
+        {this.props.image_path ? (
+          <img
+            className={styles.image}
+            src={this.props.image_path}
+            alt={this.props.alt}
+          />
+        ) : (
+          <div className={styles.container} />
+        )}
+        <h1 className={styles.title}>{this.props.title}</h1>
+      </Link>
+    );
+  }
 }

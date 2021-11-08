@@ -1,6 +1,5 @@
 import React from "react";
 import { DaoLocation } from "../../../types/DaoLocation";
-import { Banner } from "../Banner/Banner";
 import styles from "./Carrousel.module.css";
 import angleLeft from "./../../../assets/images/angle-left.svg";
 import angleRight from "./../../../assets/images/angle-right.svg";
@@ -18,7 +17,7 @@ export class Carrousel extends React.Component<Props, State> {
     image_position: 0,
   };
 
-  constructor(props: any) {
+  constructor(props: Props) {
     super(props);
     this.swapToPreviousImage = this.swapToPreviousImage.bind(this);
     this.swapToNextImage = this.swapToNextImage.bind(this);
@@ -37,15 +36,18 @@ export class Carrousel extends React.Component<Props, State> {
   }
 
   render() {
-    const bannerHeight = window.screen.width >= 650 ? 415 : 255;
-
     return (
       <div className={styles.carrousel}>
-        <Banner
-          image_path={this.props.location.pictures[this.state.image_position]}
-          alt={this.props.location.title}
-          height={bannerHeight}
-        ></Banner>
+        <div className={styles.banner}>
+          <img
+            className={styles.image}
+            src={this.props.location.pictures[this.state.image_position]}
+            alt={this.props.location.title}
+          />
+          <p className={styles.position}>{`${this.state.image_position + 1}/${
+            this.props.location.pictures.length
+          }`}</p>
+        </div>
         {this.props.location.pictures[this.state.image_position - 1] && (
           <img
             className={`${styles.angle} ${styles.left}`}
